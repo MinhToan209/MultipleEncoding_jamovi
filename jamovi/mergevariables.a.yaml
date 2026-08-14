@@ -1,0 +1,34 @@
+---
+name:  mergevariables
+title: Merge Variables
+menuGroup: Data
+menuSubgroup: Merge Variables
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+
+    - name: variables
+      title: Variables to Merge
+      type: Variables
+      description: 'Select the variables whose text values will be merged'
+
+    - name: targetName
+      title: Target Variable Name
+      type: String
+      default: mergedVar
+      description: 'Name of the new merged variable'
+
+    - name: runTrigger
+      title: Run
+      type: Action
+      description: 'Click Run to execute the merge'
+
+    - name: newColumn
+      title: Merged Variable
+      type: Output
+      visible: true
+      default: true
+...

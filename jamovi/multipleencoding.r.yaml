@@ -1,0 +1,16 @@
+---
+name:  multipleencoding
+title: Multiple Encoding
+jrs:   '1.1'
+
+items:
+    - name:  text
+      title: Output of Encoding
+      type:  Preformatted
+
+    - name:  newColumns
+      title: New Columns
+      type: Output
+      initInRun: true
+
+...

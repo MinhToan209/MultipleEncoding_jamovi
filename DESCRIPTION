@@ -1,0 +1,10 @@
+Package: MultipleEncoding
+Title: Multiple Encoding for Jamovi
+Version: 1.0.0
+Authors@R: person("Minh", "Toan", email = "minhtoan@example.com", role = c("aut", "cre"))
+Description: Performs multiple encoding on variables containing delimited values. Each unique value becomes a binary column (0/1). Improvements over OneHotEncoding: only trims whitespace after splitting, uses a single vectorized strsplit, variable description contains only the unique value, and includes a Run button.
+License: GPL-3
+Encoding: UTF-8
+RoxygenNote: 7.3.1
+Depends: R (>= 4.0.0)
+Imports: jmvcore, R6

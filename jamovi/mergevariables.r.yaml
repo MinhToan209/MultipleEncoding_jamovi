@@ -1,0 +1,16 @@
+---
+name:  mergevariables
+title: Merge Variables
+jrs:   '1.1'
+
+items:
+    - name:  text
+      title: Output
+      type:  Preformatted
+
+    - name:  newColumn
+      title: Merged Variable
+      type: Output
+      initInRun: true
+
+...

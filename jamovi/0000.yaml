@@ -1,0 +1,36 @@
+---
+title: Performs multiple encoding on delimited variables
+name: MultipleEncoding
+version: 1.0.0
+jms: '1.0'
+authors:
+  - Minh Toan
+maintainer: Minh Toan <minhtoan@example.com>
+date: '2026-08-14'
+type: R
+description: >-
+  Performs multiple encoding on variables containing delimited values. Each
+  unique value becomes a binary (0/1) column. Improvements over OneHotEncoding:
+  - Only trims whitespace after splitting (preserves internal spaces) - Uses a
+  single vectorized strsplit for better performance - Variable description
+  contains only the unique value - Includes a Run button; execution happens only
+  when clicked
+usesNative: true
+minApp: 1.0.8
+analyses:
+  - title: Multiple Encoding
+    name: multipleencoding
+    ns: MultipleEncoding
+    menuGroup: Data
+    menuTitle: Multiple Encoding
+    menuSubgroup: Multiple Encoding
+    category: analyses
+  - title: Merge Variables
+    name: mergevariables
+    ns: MultipleEncoding
+    menuGroup: Data
+    menuTitle: Merge Variables
+    menuSubgroup: Merge Variables
+    category: analyses
+
+...

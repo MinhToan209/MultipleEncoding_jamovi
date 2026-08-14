@@ -1,0 +1,33 @@
+---
+name:  multipleencoding
+title: Multiple Encoding
+menuGroup: Data
+menuSubgroup: Multiple Encoding
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+
+    - name: columnToSplit
+      title: Variable to Split
+      type: Variable
+
+    - name: separator
+      title: Separator
+      type: String
+      default: ','
+      description: 'The character used to separate values'
+
+    - name: runTrigger
+      title: Run
+      type: Action
+      description: 'Click Run to execute the encoding'
+
+    - name: newColumns
+      title: Display New Variables
+      type: Output
+      visible: true
+      default: true
+...

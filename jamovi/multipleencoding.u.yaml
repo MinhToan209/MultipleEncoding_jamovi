@@ -1,0 +1,30 @@
+title: Multiple Encoding
+name: multipleencoding
+jus: '3.0'
+stage: 0
+compilerMode: aggressive
+children:
+  - type: VariableSupplier
+    persistentItems: false
+    stretchFactor: 1
+    children:
+      - type: TargetLayoutBox
+        label: Variable to Split
+        children:
+          - type: VariablesListBox
+            name: columnToSplit
+            maxItemCount: 1
+            isTarget: true
+  - type: LayoutBox
+    margin: large
+    children:
+      - type: TextBox
+        name: separator
+        format: string
+  - type: LayoutBox
+    margin: large
+    children:
+      - type: ActionButton
+        name: runTrigger
+      - type: Output
+        name: newColumns
