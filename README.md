@@ -10,7 +10,7 @@ chọn phân cách bởi dấu `,` hoặc `;`).
 
 ## Các phân tích (Analyses)
 
-Module gồm 2 phân tích, đều nằm trong menu **Data**.
+Module gồm 3 phân tích, đều nằm trong menu **Data**.
 
 ### 1. Multiple Encoding
 
@@ -47,6 +47,45 @@ Các phần rỗng hoặc `NA` sẽ được **bỏ qua**. Ví dụ:
 | foo | NA | baz | `foo;baz` |
 | NA | bar | qux | `bar;qux` |
 | x | y | z | `x;y;z` |
+
+### 3. Weights to Dataset
+
+Nhân bản vật lý các dòng dữ liệu theo một biến weight liên tục, tạo ra một
+dataset mới đặt tên `dataset_weight`.
+
+Đọc toàn bộ dataset hiện tại, với mỗi dòng lấy giá trị của biến weight `w`,
+sau đó **vật lý** nhân bản dòng đó `w` lần vào dataset kết quả:
+
+| ID | Weight | Value |  →  | ID | Weight | Value |
+|----|--------|-------|----|----|--------|-------|
+| 1  | 3      | A     |    | 1  | 3      | A     |
+| 2  | 1      | B     |    | 1  | 3      | A     |
+| 3  | 2      | C     |    | 1  | 3      | A     |
+|    |        |       |    | 2  | 1      | B     |
+|    |        |       |    | 3  | 2      | C     |
+|    |        |       |    | 3  | 2      | C     |
+
+Đây là **PHYSICAL ROW REPLICATION**, không phải tạo cột frequency / survey
+weight. Dataset gốc không bị thay đổi.
+
+---
+
+## Cách sử dụng
+
+1. Trong jamovi: **Data → Weights to Dataset**.
+2. Chọn đúng **1 biến weight** (chỉ cho phép biến numeric/continuous).
+3. Nhấn **Create**.
+4. Khu vực **Status** hiển thị kết quả, ví dụ:
+
+   ```
+   Dataset created successfully: dataset_weight.omv
+   Rows before: 3  ->  Rows after: 6
+   Location: /path/to/dataset_weight.omv
+   The new dataset has been opened in a new jamovi window.
+   ```
+
+5. Dataset mới tự động mở trong một cửa sổ jamovi khác (qua `jmvReadWrite`), hoặc
+   có thể mở thủ công (**File → Open**) nếu tự động mở thất bại.
 
 ---
 
